@@ -312,14 +312,10 @@ void problem11()
 
     drawFilledTriangle(composite, color(0.0f, 0.0f, 1.0f, 1.0f));
 
-    // GLUT_WINDOW_WIDTH / HEIGHT dont work on mac, will change when back
-    // in visual studio
-#warning replace 400 and 700 with GLUT_WINDOW_WIDTH and GLUT_WINDOW_HEIGHT
-
-    if ((int)angleV > 400 || (int)angleV < -400) {
+    if ((int)angleV > glutGet(GLUT_WINDOW_HEIGHT) / 2 || (int)angleV < -1.0 * glutGet(GLUT_WINDOW_HEIGHT) / 2) {
         directionV = !directionV;
     }
-    if ((int)angleH > 700 || (int)angleH < -700) {
+    if ((int)angleH > glutGet(GLUT_WINDOW_WIDTH) / 2 || (int)angleH < -1.0 * glutGet(GLUT_WINDOW_WIDTH) / 2) {
         directionH = !directionH;
     }
     if(directionV) {
